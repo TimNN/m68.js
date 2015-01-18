@@ -127,7 +127,7 @@ var AssemblyM68HighlightRules = function() {
                 caseInsensitive: true,
                 next: 'values'
             }
-        ].concat(comments),
+        ].concat(new_line).concat(comments),
 
         values: [
             {
@@ -149,7 +149,7 @@ var AssemblyM68HighlightRules = function() {
                 regex: '\\b[0-9]+\\b'
             }, {
                 token: 'keyword.operator.assembly',
-                regex: '(?:[#,\\-~+/&|^\\\\()]|<<|>>|\\*\\*)',
+                regex: '(?:[#,\\-~+/&|^\\\\()]|<<|>>|\\*\\*|\\.[lLwW])',
                 merge: false
             }, {
                 token: 'string',
@@ -267,7 +267,7 @@ define("ace/mode/assembly_m68",["require","exports","module","ace/lib/oop","ace/
 
 var oop = require("../lib/oop");
 var TextMode = require("./text").Mode;
-var AssemblyX86HighlightRules = require("./assembly_m68_highlight_rules").AssemblyM68HighlightRules;
+var AssemblyM68HighlightRules = require("./assembly_m68_highlight_rules").AssemblyM68HighlightRules;
 var FoldMode = require("./folding/coffee").FoldMode;
 
 var Mode = function() {
@@ -278,7 +278,7 @@ oop.inherits(Mode, TextMode);
 
 (function() {
     this.lineCommentStart = ";";
-    this.$id = "ace/mode/assembly_m868";
+    this.$id = "ace/mode/assembly_m68";
 }).call(Mode.prototype);
 
 exports.Mode = Mode;
