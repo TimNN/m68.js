@@ -9,6 +9,6 @@
     font-family: "Source Code Pro", Menlo, Monaco, Consolas, "DejaVu Sans Mono", Inconsolata, monospace;
 }
 
-#file_chooser {
+#file_chooser, #file_dl {
     display: none;
 }

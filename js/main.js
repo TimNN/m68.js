@@ -49,7 +49,7 @@ function save_file(editor) {
         filename = files[0].name
     }
 
-    var el = document.createElement("a");
+    var el = document.getElementById("file_dl");
     el.href = url;
     el.download = filename;
     el.click();
