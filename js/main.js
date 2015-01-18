@@ -1,3 +1,5 @@
+check_google_chrome();
+
 document.addEventListener("DOMContentLoaded", function() {
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
@@ -53,4 +55,14 @@ function save_file(editor) {
     el.href = url;
     el.download = filename;
     el.click();
+}
+
+function check_google_chrome() {
+    if(!(window.chrome !== null && window.chrome !== undefined && window.navigator.vendor === "Google Inc.")) {
+        // is not Google chrome
+        if (!localStorage.getItem("chrome-warned")) {
+            alert("This Website was made for and tested with Google Chrome. (on OS X and Windows). Other browsers may not work.")
+            localStorage.setItem("chrome-warned", true);
+        }
+    }
 }
